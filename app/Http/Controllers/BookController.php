@@ -9,7 +9,16 @@ class BookController extends Controller
     public function index()
     {
         // dal db prendiamo la lista dei libri
-        return view('books.index');
+        $titles = [
+            'piccolo principe',
+            'promessi sposi',
+            'harry potter',
+            'altro',
+        ];
+
+        return view('books.index', [
+            'titles' => $titles,
+        ]);
     }
 
     public function create()
